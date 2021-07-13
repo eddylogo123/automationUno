@@ -55,6 +55,11 @@ public class AddToCartPage {
         //System.out.println("click adicionar al carrito");
         seleniumImplementation.click(btnAddToCart);
         //System.out.println("click ejecutar el boton");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         seleniumImplementation.clickUsingJavaScriptExecutor(btnCheckout, driver);
         seleniumImplementation.refresh(driver);
         //seleniumImplementation.validateText(driver, cartText, "3");
