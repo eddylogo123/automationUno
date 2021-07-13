@@ -35,31 +35,31 @@ public class AddToCartPage {
     SeleniumImplementation seleniumImplementation;
 
     public AddToCartPage(WebDriver driver){
-        System.out.println("**********************");
+        //System.out.println("**********************");
         PageFactory.initElements(driver, this);
         seleniumImplementation = new SeleniumImplementation();
     }
 
     public boolean validateAddToCart(WebDriver driver){
-        System.out.println("********************* ingresar al metodo ********************");
+        //System.out.println("********************* ingresar al metodo ********************");
         seleniumImplementation.performMouseHower(itemImage, driver);
 
-        System.out.println("presionar el boton more");
+        //System.out.println("presionar el boton more");
         seleniumImplementation.click(btnMore);
-        System.out.println("limpiar el texto cantidad");
+        //System.out.println("limpiar el texto cantidad");
         seleniumImplementation.clear(txtQuantity);
-        System.out.println("limpiar el texto cantidad");
+        //System.out.println("limpiar el texto cantidad");
         seleniumImplementation.setText("3", txtQuantity);
-        System.out.println("seleccionar el tamano");
+        //System.out.println("seleccionar el tamano");
         seleniumImplementation.selectByVisibleText(selectSize, "M");
-        System.out.println("click adicionar al carrito");
+        //System.out.println("click adicionar al carrito");
         seleniumImplementation.click(btnAddToCart);
-        System.out.println("click ejecutar el boton");
+        //System.out.println("click ejecutar el boton");
         seleniumImplementation.clickUsingJavaScriptExecutor(btnCheckout, driver);
         seleniumImplementation.refresh(driver);
         //seleniumImplementation.validateText(driver, cartText, "3");
 
-        System.out.println("********************* finalizar el metodo ********************");
+        //System.out.println("********************* finalizar el metodo ********************");
 
         return seleniumImplementation.validateText(driver, cartText, "3");
     }

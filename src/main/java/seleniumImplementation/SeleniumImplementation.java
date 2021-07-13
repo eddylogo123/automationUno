@@ -38,7 +38,7 @@ public class SeleniumImplementation {
         //executor.executeScript("arguments[0].click();"), element);
         //System.out.println("ingresar a ejecutar: "+ element.getText());
         executor.executeScript("arguments[0].click();", element);
-        System.out.println("salir de ejecutar");
+        //System.out.println("salir de ejecutar");
 
     }
 
@@ -48,8 +48,8 @@ public class SeleniumImplementation {
 
     public boolean validateText(WebDriver driver, WebElement element, String expectedText){
         String observedText = element.getText();
-        System.out.println("observedText"+observedText);
-        System.out.println("expectedText"+expectedText);
+        //System.out.println("observedText"+observedText);
+        //System.out.println("expectedText"+expectedText);
         if(observedText.equals(expectedText)){
             return true;
         }
